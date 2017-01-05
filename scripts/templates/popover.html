@@ -1,0 +1,34 @@
+<ion-popover-view ng-class="{'menuPopover':$root.$storage.user,'menuPopoverLog':!$root.$storage.user}">
+<ion-content>
+  <div class="list">
+    <!--<a class="item" href="#"  ng-click="showFilter()">
+      <i class="icon ion-stats-bars"></i>
+      Sort by trends
+    </a>-->
+    <a class="item" ng-click="openNotifications()" ng-if="$root.$storage.notifications.length>0" >
+    <i class="icon ion-android-notifications"></i>
+      {{'NOTIFICATIONS'|translate}} <span class="badge badge-assertive">{{ $root.$storage.notifications.length }}</span>
+    </a>
+    <a class="item" ng-if="$root.$storage.view == 'compact'" ng-click="changeView('card')">
+    <i class="icon ion-navicon-round"></i>
+      {{'CARD_VIEW'|translate}}
+    </a>
+    <a class="item" ng-if="$root.$storage.view == 'card'" ng-click="changeView('compact')">
+    <i class="icon ion-navicon-round"></i>
+      {{'COMPACT_VIEW'|translate}}
+    </a>
+    <a class="item" ng-click="openSmodal()">
+      <i class="icon ion-android-search"></i>
+      {{'SEARCH'|translate}}
+    </a>
+    <a class="item" ng-click="clearSearch()" ng-if="$root.$storage.tag">
+      <i class="icon ion-close-round"></i>
+      #{{$root.$storage.tag}}
+    </a>
+    <a class="item" ng-if="$root.$storage.user" ng-click="openPostModal()">
+      <i class="icon ion-android-create"></i>
+      {{'SUBMIT_A_STORY'|translate}}
+    </a>
+  </div>
+</ion-content>
+</ion-popover-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="{{'NOTIFICATIONS' | translate}}">
+  <ion-content class="has-header">
+	<ion-list ng-if="$root.$storage.notifications" can-swipe="true">
+  		<ion-item ng-repeat="item in $root.$storage.notifications | orderBy: '-created' " ng-click="$root.getContentAndOpen(item)" class='item-thumbnail-left'>
+  			<img ng-src="scripts/img/{{item.notification}}" />
+		    <p><h2>{{item.title}}</h2></p>
+		    <span>{{item.message}}</span>
+		    <div class="row postdetails twrap"><div class="col"><i class="icon ion-android-time"></i> {{item.created|timeago}}&nbsp;{{'BY' | translate}}&nbsp;<b>{{item.author}}&nbsp;</b></div></div>
+		    <ion-option-button class="button-assertive" ng-click="removeNotification($index)">{{'REMOVE' | translate}}
+		    </ion-option-button>
+    	</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

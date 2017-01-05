@@ -1,0 +1,10 @@
+<ion-modal-view class="mymodal">
+  <ion-header-bar class="bar bar-header bar-positive">
+    <button class="button button-clear button-icon ion-arrow-left-c" ng-click="closeModal()"></button>
+    <h1 class="title">{{'REPLYTO'|translate}} @{{post.author}}</h1>
+    <button class="button button-positive button-primary" ng-click="reply()">{{'POST'|translate}}</button>
+  </ion-header-bar>
+  <ion-content class="padding posting">
+      <div class='editor' ng-focus='cfocus()' name='editor2' text-angular ng-model="data.comment"></div>
+  </ion-content>
+</ion-modal-view>

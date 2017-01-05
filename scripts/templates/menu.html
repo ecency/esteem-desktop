@@ -1,0 +1,96 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!--<ion-header-bar class="bar-positive" ng-if="!$root.$storage.user">
+      <h1 class="title center">eSteem</h1>
+    </ion-header-bar>-->
+    <ion-content>
+      <div ng-if="$root.$storage.user && isOpen()" ng-style="$root.$storage.user.json_metadata.profile.cover_image ? mcss : null">
+      <br>
+        <center>
+          <a menu-close href="#/app/profile/{{$root.$storage.user.username}}" class="item-myavatar" ng-if="$root.$storage.user">
+            <span class="item-myavatar" ng-if="!$root.$storage.user.json_metadata.profilePicUrl && !$root.$storage.user.json_metadata.profile.profile_image"><img src="scripts/img/logo.png"></span>
+            <img ng-src="{{$root.$storage.user.json_metadata.profile.profile_image || $root.$storage.user.json_metadata.profilePicUrl}}" ng-if="$root.$storage.user.json_metadata.profilePicUrl || $root.$storage.user.json_metadata.profile.profile_image" />
+          </a>
+          <div ng-class="{'footprofileinfomenu':$root.$storage.user.json_metadata.profile.cover_image}">
+            <div class="h4">@{{$root.$storage.user.username}}&nbsp;<div class="reputation">{{$root.$storage.user.reputation|reputation:true|number:1}}</div></div>
+            <div ng-click="showMeExtra()" class="padding"><i class="icon ion-android-list"></i>&nbsp;{{$root.$storage.user.post_count}}&nbsp;&nbsp;<i class="icon ion-arrow-graph-up-right"></i>&nbsp;{{$root.$storage.user.voting_power/100|number:2}}</div>
+          </div>
+        </center>
+      </div>
+      <ion-list>
+        <div ng-if="!$root.$storage.user && isOpen()">
+          <center>
+            <p>
+              <img ng-src="scripts/img/logo.png" width="200" />
+            </p>
+          </center>
+        </div>
+        <a menu-close href="#/app/profile/{{$root.$storage.user.username}}" class="item item-icon-left logo-avatar" ng-if="$root.$storage.user && !isOpen()">
+          <img class="icon" ng-src="{{$root.$storage.user.json_metadata.profile.profile_image}}" src="scripts/img/logo.png" />
+        </a>
+        <a menu-close ng-click="login()" class="item item-icon-left logo-avatar" ng-if="!$root.$storage.user && !isOpen()">
+          <img class="icon" src="scripts/img/logo.png" />
+        </a>
+        <a menu-close ng-click="login()" class="item item-icon-left" ng-if="!$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-log-in"></i>
+          {{'LOGIN'|translate}}
+        </a>
+        <a menu-close ui-sref="app.posts" class="item item-icon-left" ui-sref-active="current">
+          <i class="icon ion-home"></i>
+          {{'HOME'|translate}}
+        </a>
+        <a menu-close href="#/app/profile/{{$root.$storage.user.username}}" class="item item-icon-left" ng-if="$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-person"></i>
+          {{'PROFILE'|translate}}
+        </a>
+        <a menu-close ui-sref="app.follow" class="item item-icon-left" ng-if="$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-person-stalker"></i>
+          {{'FOLLOW'|translate}}
+        </a>
+        <a menu-close ui-sref="app.bookmark" class="item item-icon-left" ng-if="$root.$storage.bookmark && $root.$storage.bookmark.length>0" ui-sref-active="current">
+          <i class="icon ion-bookmark"></i>
+          {{'BOOKMARKS'|translate}}
+        </a>
+        <a menu-close ui-sref="app.send" class="item item-icon-left" ng-if="$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-android-send"></i>
+          {{'TRANSFER'|translate}}
+        </a>
+        <a menu-close href="#/app/exchange/{{$root.$storage.user.username}}" class="item item-icon-left" ng-if="$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-arrow-swap"></i>
+          {{'MARKET'|translate}}
+        </a>
+        <a menu-close ui-sref="app.settings" class="item item-icon-left" ui-sref-active="current">
+          <i class="icon ion-android-settings"></i>
+          {{'SETTINGS'|translate}}
+        </a>
+        <a menu-close ui-sref="app.about" class="item item-icon-left" ui-sref-active="current">
+          <i class="icon ion-information"></i>
+          {{'ABOUT'|translate}}
+        </a>
+        <a menu-close ng-click="logout()" class="item item-icon-left" ng-if="$root.$storage.user" ui-sref-active="current">
+          <i class="icon ion-log-out"></i>
+          {{'LOGOUT'|translate}}
+        </a>
+      </ion-list>
+    </ion-content>
+    <!-- align to the bottom of the page -->
+    <div style="position: absolute; bottom: 0px; width: 100%" ng-if="$root.$storage.appversion">
+        <div style="text-align: center; color:#ccc;">
+          <p>{{$root.$storage.appversion}}</p>
+        </div>
+    </div>
+  </ion-side-menu>
+</ion-side-menus>

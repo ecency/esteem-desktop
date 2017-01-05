@@ -1,0 +1,51 @@
+{
+  "name": "eSteem",
+  "version": "1.0.0",
+  "description": "eSteem desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feruz/esteem-desktop.git"
+  },
+  "keywords": [
+    "eSteem",
+    "AngularJS",
+    "Electron",
+    "Steem"
+  ],
+  "author": "Feruz M",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feruzm/esteem-desktop/issues"
+  },
+  "homepage": "http://www.esteem.ws",
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.0.9",
+    "angular-route": "^1.5.7",
+    "asar": "^0.11.0",
+    "diff-match-patch": "^1.0.0",
+    "electron-packager": "^7.0.4",
+    "grunt": "^1.0.1",
+    "grunt-comment-toggler": "^0.2.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-search": "^0.1.8",
+    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",
+    "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git"
+  },
+  "dependencies": {
+    "diff-match-patch": "^1.0.0",
+    "form-data": "^2.1.2",
+    "install": "^0.8.4",
+    "request": "^2.79.0",
+    "speakingurl": "^11.0.0",
+    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",
+    "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git"
+  }
+}
