@@ -8,7 +8,7 @@
 
     var template = [
         {
-            label: 'App',
+            label: 'eSteem',
             submenu: [
                 {
                     label: 'Toggle Full Screen',
@@ -37,7 +37,7 @@
                     role: 'close'
                 }
             ]
-        },
+        }/*,
         {
             label: 'Dev',
             submenu: [
@@ -76,7 +76,7 @@
                     }
                 }
             ]
-        }
+        }*/
     ];
 
 
