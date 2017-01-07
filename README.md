@@ -10,7 +10,7 @@ Check out eSteem mobile versions as well, available on iOS and Android devices [
 
 ## Only download and install versions provided on this [official github](https://github.com/feruzm/releases)
 
-### For more info: 
+### For more info:
 
 http://www.esteem.ws
 
@@ -38,6 +38,7 @@ $ git clone https://github.com/feruzm/esteem-desktop
 $ cd esteem-desktop
 # Install dependencies and run the app
 $ bower install
+# Make sure to run `npm install` in node_modules/steem-rpc and node_modules/steemjs-lib if you get error
 $ npm install && npm start
 ```
 
