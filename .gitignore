@@ -2,4 +2,5 @@ node_modules
 bower_components
 build
 dist
+!scripts/lib/textAngular/dist
 typings
