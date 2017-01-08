@@ -109,7 +109,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $s
               //don't allow the user to close unless he enters wifi password
               e.preventDefault();
             } else {
-              var clipboard = require('electron');
+              const {clipboard} = require('electron')
               clipboard.writeText($scope.data.text);
               return $scope.data.text;
             }
