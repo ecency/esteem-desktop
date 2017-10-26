@@ -24,6 +24,9 @@
   ],
   "dependencies": {
     "angular-translate": "^2.13.1",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "ion-floating-menu": "^1.0.5",
+    "ngCordova": "^0.1.27-alpha",
+    "ngstorage": "^0.3.11"
   }
 }
