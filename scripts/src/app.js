@@ -17,7 +17,7 @@
   ]);
 
   if (localStorage.getItem("socketUrl") === null) {
-    localStorage.setItem("socketUrl", "wss://steemit.com/wspa");
+    localStorage.setItem("socketUrl", "wss://steemd.steemit.com");
   }
 
   var steemRPC = require("steem-rpc");
@@ -613,7 +613,7 @@
                   tr.process_transaction($rootScope.mylogin, null, true);
 
                   setTimeout(function() {
-                    if (localStorage.error == 1) {
+                    if (localStorage.error === 1) {
                       $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('REBLOG_TEXT')+" "+localStorage.errormessage)
                     } else {
                       //$scope.refreshFollowers();
@@ -675,7 +675,7 @@
               tr.process_transaction($rootScope.mylogin, null, true);
               setTimeout(function() {
                 post.invoting = false;
-                if (localStorage.error == 1) {
+                if (localStorage.error === 1) {
                   $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR')+" "+localStorage.errormessage)
                 } else {
                   if (afterward === 'fetchContent') {
