@@ -52,6 +52,7 @@
     "install": "^0.8.4",
     "ion-floating-menu": "github:pregiotek/ion-floating-menu#96bdf55d8d2ea288e31f445d4ced4bdabe565115",
     "jquery": "^3.2.1",
+    "markdowndeep": "^1.6.12",
     "marked": "^0.3.6",
     "ng-cordova": "^0.1.27-alpha",
     "ngstorage": "github:gsklee/ngStorage#253b718a0b35b044fba25c78b1b2020d672c4017",
