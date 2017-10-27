@@ -44,6 +44,7 @@
     "grunt-search": "^0.1.8"
   },
   "dependencies": {
+    "angular-qr": "github:janantala/angular-qr#1134e40510ab773d45cc26a066ef6c787a96011a",
     "angular-translate": "^2.13.1",
     "diff-match-patch": "^1.0.0",
     "form-data": "^2.1.2",
