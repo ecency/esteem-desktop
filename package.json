@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "installsteemrpc":"cd node_modules/steem-rpc && npm install",
-    "installsteemjs":"cd steemjs-lib && npm install",
-    "install": "npm run installsteemrpc && npm run installsteemjs"
+    "installsteemrpc": "cd node_modules/steem-rpc && npm install",
+    "installsteemjs": "cd node_modules/steemjs-lib && npm install",
+    "install": "npm run installsteemrpc && npm run installsteemjs && bower install"
   },
   "repository": {
     "type": "git",
@@ -41,9 +41,7 @@
     "grunt-comment-toggler": "^0.2.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
-    "grunt-search": "^0.1.8",
-    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",
-    "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git"
+    "grunt-search": "^0.1.8"
   },
   "dependencies": {
     "diff-match-patch": "^1.0.0",
@@ -53,6 +51,7 @@
     "request": "^2.79.0",
     "speakingurl": "^11.0.0",
     "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git",
-    "textangular": "^1.5.16"
+    "textangular": "^1.5.16",
+    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git"
   }
 }
