@@ -51,6 +51,7 @@
     "form-data": "^2.1.2",
     "install": "^0.8.4",
     "jquery": "^3.2.1",
+    "ng-cordova": "^0.1.27-alpha",
     "request": "^2.79.0",
     "speakingurl": "^11.0.0",
     "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",

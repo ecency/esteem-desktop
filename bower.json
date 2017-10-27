@@ -24,7 +24,6 @@
   ],
   "dependencies": {
     "ion-floating-menu": "^1.0.5",
-    "ngCordova": "^0.1.27-alpha",
     "ngstorage": "^0.3.11"
   }
 }
