@@ -47,6 +47,7 @@
     "diff-match-patch": "^1.0.0",
     "form-data": "^2.1.2",
     "install": "^0.8.4",
+    "jquery": "^3.2.1",
     "request": "^2.79.0",
     "speakingurl": "^11.0.0",
     "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git",
