@@ -7,7 +7,7 @@
     "start": "electron main.js",
     "installsteemrpc": "cd node_modules/steem-rpc && npm install",
     "installsteemjs": "cd node_modules/steemjs-lib && npm install",
-    "install": "npm run installsteemrpc && npm run installsteemjs && bower install",
+    "install": "npm run installsteemrpc && npm run installsteemjs",
     "buildApp": "grunt build"
   },
   "repository": {
@@ -34,9 +34,7 @@
     "angular-messages": "^1.6.6",
     "angular-route": "^1.5.7",
     "asar": "^0.11.0",
-    "bower": "^1.8.2",
-    "diff-match-patch": "^1.0.0",
-    "electron": "^1.7.9",
+    "electron": "^1.8.1",
     "electron-packager": "^7.0.4",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
@@ -50,12 +48,14 @@
     "diff-match-patch": "^1.0.0",
     "form-data": "^2.1.2",
     "install": "^0.8.4",
+    "ion-floating-menu": "github:pregiotek/ion-floating-menu#96bdf55d8d2ea288e31f445d4ced4bdabe565115",
     "jquery": "^3.2.1",
     "ng-cordova": "^0.1.27-alpha",
+    "ngstorage": "github:gsklee/ngStorage#253b718a0b35b044fba25c78b1b2020d672c4017",
     "request": "^2.79.0",
     "speakingurl": "^11.0.0",
-    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",
-    "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git",
+    "steem-rpc": "github:feruzm/steem-rpc#c3c786e248d82c811d5439888b127000df31b004",
+    "steemjs-lib": "github:feruzm/steemjs-lib#dd001122e7f4247c7bf6d45b6baf73277d6b8ee4",
     "textangular": "^1.5.16"
   }
 }
