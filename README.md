@@ -18,6 +18,10 @@ info@esteem.ws
 
 https://steemit.com/@good-karma
 
+## Requirements
+* NodeJS
+* npm
+* Platform Supported by Electron
 
 ## To Use
 
