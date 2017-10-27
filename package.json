@@ -7,7 +7,8 @@
     "start": "electron main.js",
     "installsteemrpc": "cd node_modules/steem-rpc && npm install",
     "installsteemjs": "cd node_modules/steemjs-lib && npm install",
-    "install": "npm run installsteemrpc && npm run installsteemjs && bower install"
+    "install": "npm run installsteemrpc && npm run installsteemjs && bower install",
+    "buildApp":"grunt build"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,6 @@
   },
   "homepage": "http://www.esteem.ws",
   "devDependencies": {
-    "bower": "^1.8.2",
-    "electron": "^1.7.9",
     "angular": "^1.5.7",
     "angular-animate": "^1.5.7",
     "angular-aria": "^1.5.7",
@@ -35,9 +34,12 @@
     "angular-messages": "^1.6.6",
     "angular-route": "^1.5.7",
     "asar": "^0.11.0",
+    "bower": "^1.8.2",
     "diff-match-patch": "^1.0.0",
+    "electron": "^1.7.9",
     "electron-packager": "^7.0.4",
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-comment-toggler": "^0.2.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
@@ -50,8 +52,8 @@
     "jquery": "^3.2.1",
     "request": "^2.79.0",
     "speakingurl": "^11.0.0",
+    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git",
     "steemjs-lib": "git+https://github.com/feruzm/steemjs-lib.git",
-    "textangular": "^1.5.16",
-    "steem-rpc": "git+https://github.com/feruzm/steem-rpc.git"
+    "textangular": "^1.5.16"
   }
 }
