@@ -5,3 +5,4 @@ dist
 !scripts/lib/textAngular/dist
 typings
 .idea
+.DS_Store
