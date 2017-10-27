@@ -8,7 +8,7 @@
     "installsteemrpc": "cd node_modules/steem-rpc && npm install",
     "installsteemjs": "cd node_modules/steemjs-lib && npm install",
     "install": "npm run installsteemrpc && npm run installsteemjs && bower install",
-    "buildApp":"grunt build"
+    "buildApp": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "grunt-search": "^0.1.8"
   },
   "dependencies": {
+    "angular-translate": "^2.13.1",
     "diff-match-patch": "^1.0.0",
     "form-data": "^2.1.2",
     "install": "^0.8.4",
