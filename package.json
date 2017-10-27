@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "install": "cd node_modules/steem-rpc && npm install && cd ../steemjs-lib && npm install"
+    "installsteemrpc":"cd node_modules/steem-rpc && npm install",
+    "installsteemjs":"cd steemjs-lib && npm install",
+    "install": "npm run installsteemrpc && npm run installsteemjs"
   },
   "repository": {
     "type": "git",
