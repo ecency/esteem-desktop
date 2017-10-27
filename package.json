@@ -47,6 +47,7 @@
     "angular-qr": "github:janantala/angular-qr#1134e40510ab773d45cc26a066ef6c787a96011a",
     "angular-translate": "^2.13.1",
     "angularjs-slider": "^6.4.0",
+    "angularjs-toaster": "^1.1.0",
     "diff-match-patch": "^1.0.0",
     "form-data": "^2.1.2",
     "install": "^0.8.4",
