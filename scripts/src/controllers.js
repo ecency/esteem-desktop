@@ -302,7 +302,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $rootScope, $
         $scope.data.search = angular.lowercase($scope.data.search);
         setTimeout(function () {
             if ($scope.data.search.length > 1) {
-                if ($scope.data.type == "tag") {
+                if ($scope.data.type === "tag") {
                     window.Api.database_api().exec("get_trending_tags", [$scope.data.search, 15]).then(function (result) {
                         var ee = [];
                         $scope.data.searchResult = result;
@@ -312,7 +312,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $rootScope, $
                         }
                     });
                 }
-                if ($scope.data.type == "user") {
+                if ($scope.data.type === "user") {
                     var ee = [];
                     window.Api.database_api().exec("lookup_accounts", [$scope.data.search, 15]).then(function (result) {
                         if (result) {
@@ -465,7 +465,7 @@ app.controller('SendCtrl', function ($scope, $rootScope, $state, $ionicPopup, $i
                                     localStorage.error = 0;
                                     tr.process_transaction($scope.mylogin, null, true);
                                     setTimeout(function () {
-                                        if (localStorage.error == 1) {
+                                        if (localStorage.error === 1) {
                                             $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                                         } else {
                                             $rootScope.showAlert($filter('translate')('INFO'), $filter('translate')('TX_BROADCASTED')).then(function () {
@@ -483,7 +483,7 @@ app.controller('SendCtrl', function ($scope, $rootScope, $state, $ionicPopup, $i
                                     localStorage.error = 0;
                                     tr.process_transaction($scope.mylogin, null, true);
                                     setTimeout(function () {
-                                        if (localStorage.error == 1) {
+                                        if (localStorage.error === 1) {
                                             $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                                         } else {
                                             $rootScope.showAlert($filter('translate')('INFO'), $filter('translate')('TX_BROADCASTED')).then(function () {
@@ -578,7 +578,7 @@ app.controller('PostsCtrl', function ($scope, $rootScope, $state, $ionicPopup, $
         var fil = $scope.mymenu[t].custom;
         $rootScope.$storage.filter = fil;
         angular.forEach($scope.mymenu, function (v, k) {
-            if (v.custom == fil) {
+            if (v.custom === fil) {
                 $rootScope.$storage.filterName = v.text;
             }
         });
@@ -704,7 +704,7 @@ app.controller('PostsCtrl', function ($scope, $rootScope, $state, $ionicPopup, $
     $scope.insertImage = function (type) {
         var options = {};
 
-        if (type == 0) {
+        if (type === 0) {
             const electron = require('electron')
             const remote = electron.remote
             const fs = require('fs');
@@ -799,7 +799,7 @@ app.controller('PostsCtrl', function ($scope, $rootScope, $state, $ionicPopup, $
     };
 
     String.prototype.replaceAll = function (str1, str2, ignore) {
-        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
+        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) === "string") ? str2.replace(/\$/g, "$$$$") : str2);
     };
 
     $scope.submitStory = function () {
@@ -872,7 +872,7 @@ app.controller('PostsCtrl', function ($scope, $rootScope, $state, $ionicPopup, $
                 tr.process_transaction($scope.mylogin, null, true);
                 $scope.replying = false;
                 setTimeout(function () {
-                    if (localStorage.error == 1) {
+                    if (localStorage.error === 1) {
                         $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                     } else {
                         //$scope.closePostModal();
@@ -1310,20 +1310,20 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
     $scope.insertText = function (text) {
         var input = $scope.lastFocused;
         //console.log(input);
-        if (input == undefined) {
+        if (input === undefined) {
             return;
         }
         var scrollPos = input.scrollTop;
         var pos = 0;
-        var browser = ((input.selectionStart || input.selectionStart == "0") ?
+        var browser = ((input.selectionStart || input.selectionStart === "0") ?
             "ff" : (document.selection ? "ie" : false ) );
-        if (browser == "ie") {
+        if (browser === "ie") {
             input.focus();
             var range = document.selection.createRange();
             range.moveStart("character", -input.value.length);
             pos = range.text.length;
         }
-        else if (browser == "ff") {
+        else if (browser === "ff") {
             pos = input.selectionStart
         }
 
@@ -1331,7 +1331,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
         var back = (input.value).substring(pos, input.value.length);
         input.value = front + text + back;
         pos = pos + text.length;
-        if (browser == "ie") {
+        if (browser === "ie") {
             input.focus();
             var range = document.selection.createRange();
             range.moveStart("character", -input.value.length);
@@ -1339,7 +1339,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
             range.moveEnd("character", 0);
             range.select();
         }
-        else if (browser == "ff") {
+        else if (browser === "ff") {
             input.selectionStart = pos;
             input.selectionEnd = pos;
             input.focus();
@@ -1417,7 +1417,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
 
     $scope.updateSlideStatus = function (slide) {
         var zoomFactor = $ionicScrollDelegate.$getByHandle('scrollHandle' + slide).getScrollPosition().zoom;
-        if (zoomFactor == $scope.zoomMin) {
+        if (zoomFactor === $scope.zoomMin) {
             $ionicSlideBoxDelegate.enableSlide(true);
         } else {
             $ionicSlideBoxDelegate.enableSlide(false);
@@ -1444,7 +1444,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
     $scope.insertImage = function (type) {
         var options = {};
         if ($scope.edit) {
-            if (type == 0) {
+            if (type === 0) {
                 const electron = require('electron')
                 const remote = electron.remote
                 const fs = require('fs');
@@ -1506,7 +1506,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
                 });
             }
         } else {
-            if (type == 0) {
+            if (type === 0) {
                 const electron = require('electron')
                 const remote = electron.remote
                 //var fdd = require('form-data');
@@ -1641,7 +1641,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
                         tr.process_transaction($scope.mylogin, null, true);
 
                         setTimeout(function () {
-                            if (localStorage.error == 1) {
+                            if (localStorage.error === 1) {
                                 $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                             } else {
                                 $rootScope.showMessage($filter('translate')('SUCCESS'), $filter('translate')('DELETED_COMMENT'));
@@ -1678,7 +1678,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
         }, 10);
     };
     String.prototype.replaceAll = function (str1, str2, ignore) {
-        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
+        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) === "string") ? str2.replace(/\$/g, "$$$$") : str2);
     };
     $scope.submitStory = function () {
         $rootScope.$broadcast('show:loading');
@@ -1740,7 +1740,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
                 tr.process_transaction($scope.mylogin, null, true);
                 $scope.replying = false;
                 setTimeout(function () {
-                    if (localStorage.error == 1) {
+                    if (localStorage.error === 1) {
                         $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                     } else {
                         //$scope.closePostModal();
@@ -1803,7 +1803,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, $rootScope, $interval
                 tr.process_transaction($scope.mylogin, null, true);
                 $scope.replying = false;
                 setTimeout(function () {
-                    if (localStorage.error == 1) {
+                    if (localStorage.error === 1) {
                         $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                     } else {
                         $scope.closeModal();
@@ -2055,7 +2055,7 @@ app.controller('FollowCtrl', function ($scope, $stateParams, $rootScope, $state,
     $scope.isFollowed = function (x) {
         var len = $scope.following.length;
         for (var i = 0; i < len; i++) {
-            if ($scope.following[i].following == x) {
+            if ($scope.following[i].following === x) {
                 return true;
             }
         }
@@ -2064,7 +2064,7 @@ app.controller('FollowCtrl', function ($scope, $stateParams, $rootScope, $state,
     $scope.isFollowing = function (x) {
         var len = $scope.followers.length;
         for (var i = 0; i < len; i++) {
-            if ($scope.followers[i].follower == x) {
+            if ($scope.followers[i].follower === x) {
                 return true;
             }
         }
@@ -2217,7 +2217,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
                                     localStorage.error = 0;
                                     tr.process_transaction($scope.mylogin, null, true);
                                     setTimeout(function () {
-                                        if (localStorage.error == 1) {
+                                        if (localStorage.error === 1) {
                                             $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                                         } else {
                                             $rootScope.$broadcast('refreshLocalUserData');
@@ -2247,7 +2247,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
             $rootScope.showMessage($filter('translate')('ERROR'), $filter('translate')('LOGIN_FAIL_A'));
         } else {
             var options = {};
-            if (type == 0) {
+            if (type === 0) {
                 const electron = require('electron')
                 const remote = electron.remote
                 const fs = require('fs');
@@ -2309,7 +2309,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
                                             tr.process_transaction($scope.mylogin, null, true);
 
                                             setTimeout(function () {
-                                                if (localStorage.error == 1) {
+                                                if (localStorage.error === 1) {
                                                     $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage);
                                                 } else {
                                                     $rootScope.$broadcast('refreshLocalUserData');
@@ -2374,7 +2374,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
                                     localStorage.error = 0;
                                     tr.process_transaction($scope.mylogin, null, true);
                                     setTimeout(function () {
-                                        if (localStorage.error == 1) {
+                                        if (localStorage.error === 1) {
                                             $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                                         } else {
                                             //$scope.refreshLocalUserData();
@@ -2454,7 +2454,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
                                     localStorage.error = 0;
                                     tr.process_transaction($scope.mylogin, null, true);
                                     setTimeout(function () {
-                                        if (localStorage.error == 1) {
+                                        if (localStorage.error === 1) {
                                             $rootScope.showAlert($filter('translate')('ERROR'), $filter('translate')('BROADCAST_ERROR') + " " + localStorage.errormessage)
                                         } else {
                                             $rootScope.$broadcast('refreshLocalUserData');
@@ -2523,7 +2523,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
             if (!$scope.active) {
                 $scope.active = "blog";
             }
-            if ($scope.active != "blog") {
+            if ($scope.active !== "blog") {
                 $scope.rest = "/" + $scope.active;
             } else {
                 $scope.rest = "";
@@ -2689,7 +2689,7 @@ app.controller('ProfileCtrl', function ($scope, $stateParams, $rootScope, $ionic
         $scope.profile = [];
         $scope.accounts = [];
         $scope.active = type;
-        if (type != "blog") {
+        if (type !== "blog") {
             $scope.rest = "/" + type;
         } else {
             $scope.rest = "";
@@ -2765,7 +2765,7 @@ app.controller('ExchangeCtrl', function ($scope, $stateParams, $rootScope) {
         });
         $scope.change = function (type) {
             $scope.active = type;
-            if (type == "open") {
+            if (type === "open") {
                 window.Api.database_api().exec("get_open_orders", [$stateParams.username]).then(function (res) {
                     $scope.openorders = res;
                     if (!$scope.$$phase) {
@@ -2773,7 +2773,7 @@ app.controller('ExchangeCtrl', function ($scope, $stateParams, $rootScope) {
                     }
                 });
             }
-            if (type == "history") {
+            if (type === "history") {
                 $scope.history = [];
                 window.Api.market_history_api().exec("get_recent_trades", [15]).then(function (r) {
                     $scope.recent_trades = r;
