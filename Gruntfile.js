@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                         src: ['index.html']
                     },
                     options: {
-                        searchString: /="node_modules\/.*"/g,
+                        searchString: /="node_modules\/.*?"/g,
                         logFormat: "custom",
                         onMatch: function (match) {
                             var filePath = match.match.substring(
