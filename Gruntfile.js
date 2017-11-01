@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     const APP_NAME = 'eSteem';
     const PLATFORM = 'all';
     const ARCH = 'all';
-    const ELECTRON_VERSION = '1.2.3';
+    const ELECTRON_VERSION = '1.8.1';
     const USE_ASAR = true;
     const ICON = 'assets/icon';
 
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
                     arch: ARCH,
                     version: ELECTRON_VERSION,
                     asar: USE_ASAR,
-                    icon: ICON
+                    icon: ICON,
                 },
                 function (err) {
                     if (err) {
