@@ -9,7 +9,7 @@ var mainWindow = null;
 app.on('window-all-closed', function () {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform != 'darwin') {
+    if (process.platform !== 'darwin') {
         app.quit();
     }
 });
@@ -28,7 +28,7 @@ app.on('ready', function () {
     // Open the DevTools.
 
     // <!-- comments:comment // -->
-       mainWindow.openDevTools();
+    mainWindow.openDevTools();
     // <!-- endcomments -->
 
     // Emitted when the window is closed.
@@ -40,18 +40,15 @@ app.on('ready', function () {
     });
 
     // mainWindow is your instance of BrowserWindow
-    var electron = require('electron')
-    var dialog = electron.dialog
+    var electron = require('electron');
+    var dialog = electron.dialog;
     exports.selectDirectory = function () {
-      // dialog.showOpenDialog as before
-      dialog.showOpenDialog(mainWindow, {
-        properties: ['openFile']
-      })
-    }
+        // dialog.showOpenDialog as before
+        dialog.showOpenDialog(mainWindow, {
+            properties: ['openFile']
+        })
+    };
     function selectDirectory() {
-      
+
     }
 });
-
-
-

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     
     <link href="scripts/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="scripts/lib/textAngular.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/textangular/dist/textAngular.css" type="text/css">
 
     <link href="scripts/css/ionic.css" rel="stylesheet">
 
@@ -13,35 +13,33 @@
 
     <script type="text/javascript" src="scripts/menu/menu.js"></script>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>        
-    
-    <script type="text/javascript" src="scripts/lib/ionic.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/ionic-sdk/release/js/ionic.bundle.min.js"></script>
 
-    <script src="scripts/lib/ngstorage/ngStorage.js"></script>
-    <script src='scripts/lib/ngCordova/dist/ng-cordova.js'></script>
-    <script src="scripts/lib/wizMarkdown.js"></script>
-    <script src='scripts/lib/ion-floating-menu/dist/ion-floating-menu.js'></script>
-    <script src='scripts/lib/angular-qr/lib/qrcode.js'></script>
-    <script src='scripts/lib/angular-qr/src/angular-qr.js'></script>
-    <script src="scripts/lib/marked.js"></script>    
-    <script src="scripts/lib/rzslider.min.js"></script>  
-    <script src="bower_components/angular-translate/angular-translate.min.js"></script>    
+    <script src="node_modules/ngstorage/ngStorage.js"></script>
+    <script src="node_modules/ng-cordova/dist/ng-cordova.js"></script>
+    <script src="node_modules/markdowndeep/MarkdownDeep.js"></script>
+    <script src="node_modules/ion-floating-menu/dist/ion-floating-menu.js"></script>
+    <script src="node_modules/angular-qr/lib/qrcode.js"></script>
+    <script src="node_modules/angular-qr/src/angular-qr.js"></script>
+    <script src="node_modules/marked/marked.min.js"></script>
+    <script src="node_modules/angularjs-slider/dist/rzslider.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
 
+    <link href="node_modules/angularjs-toaster/toaster.min.css">
+    <script src="node_modules/angularjs-toaster/toaster.min.js"></script>
 
-    <link href="scripts/lib/toaster.min.css" rel="stylesheet" />
-    <script src="scripts/lib/toaster.min.js"></script>
-
-    <script src='scripts/lib/textAngular/dist/textAngular-rangy.min.js'></script>
-    <script src='scripts/lib/textAngular/dist/textAngular-sanitize.min.js'></script>
-    <script src='scripts/lib/textAngular/dist/textAngular.js'></script>
-    <script src='scripts/lib/textAngular/dist/textAngularSetup.js'></script><!--modified-->
+    <script src="node_modules/textangular/dist/textAngular-rangy.min.js"></script>
+    <script src="node_modules/textangular/dist/textAngular-sanitize.min.js"></script>
+    <script src="node_modules/textangular/dist/textAngular.min.js"></script>
+    <script src="node_modules/textangular/dist/textAngularSetup.js"></script>
     
 
-    <script src="scripts/src/app.js"></script>
     <script src="scripts/src/controllers.js"></script>
     <script src="scripts/src/services.js"></script>
-    
-  </head>
+    <script src="scripts/src/app.js"></script>
+
+</head>
 
   <body ng-app="steem">
     <ion-nav-view>
